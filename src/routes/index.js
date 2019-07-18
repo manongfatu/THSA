@@ -10,14 +10,14 @@ const dbSource = mysql.createConnection({
 				host: "localhost",
 				user: "root",
 				password: "",
-				database: 'health'
+				database: 'cli_app'
 			  });
 
 const dbTransfered = mysql.createConnection({
 				host: "localhost",
 				user: "root",
 				password: "",
-				database: 'thsa'
+				database: 'cli_test'
 			  });
 
 
@@ -29,7 +29,7 @@ const getWPPost = function(req, res){
  const transfer = function(req, res){
  	
 			
-		var query = SELECT * from wp_posts limit ${resultCount++} , 1;
+		var query =  `SELECT * from wp_posts limit ${resultCount++} , 1`;
 		dbSource.query(query, function(err, results, fields){
 			if(err)
 				console.log(err);
