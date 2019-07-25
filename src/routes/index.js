@@ -40,7 +40,7 @@ const transfer = function(req, res){
 		var result = JSON.parse(body);
         if (!error && response.statusCode == 200) {
 			
-			if(result>0){
+			if(result.length>0){
           
 			var data = [result[0].id, result[0].title.rendered, result[0].content.rendered, result[0].status];
 
@@ -50,7 +50,7 @@ const transfer = function(req, res){
 				if(errno)
 					console.log(errno);
 				else
-					console.log({Status: "Success", PostID: count});
+					console.log({Status: "Success", PostID: result[0].id});
 			});
 
 			}
