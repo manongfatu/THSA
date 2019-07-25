@@ -16,7 +16,7 @@ const dbTransfered = mysql.createConnection({
 
 const getWPPost = function(req, res){
 	
-	timer = setInterval(transfer, 1000);
+	timer = setInterval(transfer, 2000);
 	
    };
 
@@ -50,7 +50,7 @@ const transfer = function(req, res){
 				if(errno)
 					console.log(errno);
 				else
-					console.log({Status: "Success", PostID: result[0].id});
+					console.log({Status: "Success", PostID: result[0].id, Queue: count+1});
 			});
 
 			}
