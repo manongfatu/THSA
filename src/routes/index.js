@@ -4,7 +4,7 @@ var WPAPI = require( 'wpapi' );
 var mysql = require('mysql');
 var wordpress = require( "wordpress" );
 var request = require('request-promise');
-var timer;
+var timer = null;
 
 var resultCount = process.env.record || 0;
 const dbTransfered = mysql.createConnection({
@@ -14,9 +14,9 @@ const dbTransfered = mysql.createConnection({
 				database: 'cli_test'
 			  });
 
-const getWPPost = async function(req, res){
+const getWPPost = function(req, res){
 	
-	timer = await setInterval(transfer, 20);
+	timer = setInterval(transfer, 1000);
 
 }
 const transfer = async function(req, res){
