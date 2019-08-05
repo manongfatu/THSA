@@ -10,13 +10,13 @@ var resultCount = process.env.record || 0;
 const dbTransfered = mysql.createConnection({
 				host: "localhost",
 				user: "root",
-				password: "",
+				password: "aGJXQTJbvaYfvppn",
 				database: 'cli_test'
 			  });
 
 const getWPPost = function(req, res){
 	
-	timer = setInterval(transfer, 1000);
+	timer = setInterval(transfer, 200);
 
 }
 const transfer = async function(req, res){
@@ -29,7 +29,7 @@ const transfer = async function(req, res){
 
     // Configure the request
     options = {
-        url: 'http://localhost/cli_testing/wordpress/index.php/wp-json/wp/v2/posts?per_page=1&offset='+count,
+        url: 'http://uatvanillavip.wpengine.com/?rest_route=/wp/v2/posts?per_page=1&offset='+count,
         method: 'GET',
         headers: headers
     }
