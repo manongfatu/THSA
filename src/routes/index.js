@@ -24,7 +24,7 @@ const transfer = async function(req, res){
 
     // Configure the request
     options = {
-        url: 'http://uatvanillavip.wpengine.com/?rest_route=/wp/v2/posts?per_page=1&offset='+count,
+        url: 'http://uatvanillavip.wpengine.com/?rest_route=/wp/v2/posts&per_page=1&offset='+count,
         method: 'GET',
         headers: headers
     }
