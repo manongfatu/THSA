@@ -9,16 +9,11 @@ var timer = null;
 var resultCount = process.env.record || 0;
 const dbTransfered = mysql.createConnection({
 				host: "localhost",
-				user: "root",
+				user: "developer",
 				password: "aGJXQTJbvaYfvppn",
 				database: 'cli_test'
 			  });
 
-const getWPPost = function(req, res){
-	
-	timer = setInterval(transfer, 200);
-
-}
 const transfer = async function(req, res){
 	var headers, options;
 	var count = resultCount++;
@@ -64,8 +59,6 @@ const transfer = async function(req, res){
 	     
 }
 
-router.get('/', (req, res) => {
-	getWPPost(req, res);
-});
+timer = setInterval(transfer, 200);
 
  module.exports = router;
